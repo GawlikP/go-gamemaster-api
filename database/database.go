@@ -18,7 +18,7 @@ func Connect() {
 	password := os.Getenv("DATABASE_PASSWORD")
 	conn := fmt.Sprintf(`host=%s port=%s dbname=%s user=%s password=%s sslmode=disable
 		TimeZone=Europe/Warsaw`, host, port, name, username, password)
-	
+
 	DB, err = gorm.Open(postgres.Open(conn), &gorm.Config{})
 
 	if err != nil {
